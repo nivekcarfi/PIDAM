@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIDAM - Monitoratge de Salut Intel·ligent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3; /* Blau mèdic */
+            --accent: #00d4ff;  /* Blau tecnològic */
+            --light: #f4f7f6;
+            --dark: #333;
+            --text: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* HEADER / HERO SECTION */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            background: white;
+            color: var(--primary);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* SECCIONS GENERALS */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        /* COM FUNCIONA (GRID) */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .step-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .step-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* DEMO INTERACTIVA */
+        #demo-section {
+            background-color: #f0f2f5;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .app-simulator {
+            background: white;
+            width: 300px;
+            height: 500px;
+            margin: 0 auto;
+            border-radius: 30px;
+            border: 8px solid #333;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+        .app-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .status-indicator {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            transition: 0.5s;
+        }
+
+        .status-ok { background-color: #28a745; box-shadow: 0 0 20px #28a74580; }
+        .status-warning { background-color: #ffc107; box-shadow: 0 0 20px #ffc10780; }
+        .status-danger { background-color: #dc3545; box-shadow: 0 0 20px #dc354580; }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .demo-controls {
+            margin-top: 30px;
+        }
+
+        .demo-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: var(--dark);
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .steps-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PIDAM</h1>
+        <p>El futur de la medicina predictiva comença a la teva boca.</p>
+        <a href="#demo-section" class="btn">Veure Demo Interactiva</a>
+    </header>
+
+    <section id="com-funciona">
+        <h2 class="section-title">Com funciona?</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <i class="fas fa-tooth"></i>
+                <h3>1. Implants Intel·ligents</h3>
+                <p>Dos implants molars amb biosensors analitzen la saliva en temps real (glucosa, cortisol, pH).</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-wifi"></i>
+                <h3>2. Hub Palatí</h3>
+                <p>Una fina làmina al paladar processa les dades i les envia de forma segura i sense cables.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-brain"></i>
+                <h3>3. Anàlisi IA</h3>
+                <p>La nostra Intel·ligència Artificial detecta anomalies abans que apareguin els símptomes.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>4. Alerta Primerenca</h3>
+                <p>L'usuari i el metge reben avisos al mòbil o rellotge intel·ligent.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo-section">
+        <h2 class="section-title">Simulació de l'App PIDAM</h2>
+        <p style="margin-bottom: 30px;">Fes clic als botons de sota per simular diferents escenaris de salut en temps real.</p>
+        
+        <div class="app-simulator">
+            <div class="app-header">
+                PIDAM App <i class="fas fa-battery-full" style="float: right;"></i>
+            </div>
+            <div class="app-body">
+                <div id="status-circle" class="status-indicator status-ok">
+                    <i id="status-icon" class="fas fa-check"></i>
+                </div>
+                <h3 id="status-text" style="text-align: center; margin-bottom: 20px;">Tot Correcte</h3>
+                
+                <div class="metric">
+                    <span>Glucosa:</span>
+                    <span id="val-glucosa">95 mg/dL</span>
+                </div>
+                <div class="metric">
+                    <span>Cortisol:</span>
+                    <span id="val-cortisol">Normal</span>
+                </div>
+                <div class="metric">
+                    <span>Hidratació:</span>
+                    <span id="val-hidra">Òptima</span>
+                </div>
+                <div class="metric">
+                    <span>Temp:</span>
+                    <span id="val-temp">36.5°C</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-controls">
+            <button class="demo-btn" onclick="setScenario('ok')">Estat Normal</button>
+            <button class="demo-btn" onclick="setScenario('stress')">Simular Estrès</button>
+            <button class="demo-btn" onclick="setScenario('virus')">Simular Infecció</button>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Per què PIDAM?</h2>
+        <div class="steps-grid">
+            <div class="step-card" style="text-align: left;">
+                <h3><i class="fas fa-user-shield"></i> Seguretat per a Gent Gran</h3>
+                <p>Monitoratge passiu. No cal recordar posar-se aparells ni carregar bateries cada dia.</p>
+            </div>
+            <div class="step-card" style="text-align: left;">
+                <h3><i class="fas fa-chart-line"></i> Medicina Predictiva</h3>
+                <p>No esperis a estar malalt. PIDAM t'avisa dies abans que la malaltia es manifesti.</p>
+            </div>
+            <div class="step-card" style="text-align: left;">
+                <h3><i class="fas fa-user-md"></i> Connexió Mèdica</h3>
+                <p>El teu metge pot accedir a un historial complet de les teves biomètriques.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>PIDAM © 2025</h3>
+        <p>Transformant l'odontologia en la primera línia de defensa mèdica.</p>
+        <p><small>Contacte: info@pidam-demo.com</small></p>
+    </footer>
+
+    <script>
+        function setScenario(type) {
+            const circle = document.getElementById('status-circle');
+            const icon = document.getElementById('status-icon');
+            const text = document.getElementById('status-text');
+            
+            // Valors
+            const vGlu = document.getElementById('val-glucosa');
+            const vCort = document.getElementById('val-cortisol');
+            const vHidra = document.getElementById('val-hidra');
+            const vTemp = document.getElementById('val-temp');
+
+            // Reset classes
+            circle.className = 'status-indicator';
+
+            if (type === 'ok') {
+                circle.classList.add('status-ok');
+                icon.className = 'fas fa-check';
+                text.innerText = "Tot Correcte";
+                text.style.color = "#28a745";
+                
+                vGlu.innerText = "95 mg/dL";
+                vCort.innerText = "Normal";
+                vHidra.innerText = "Òptima";
+                vTemp.innerText = "36.5°C";
+            } 
+            else if (type === 'stress') {
+                circle.classList.add('status-warning');
+                icon.className = 'fas fa-exclamation';
+                text.innerText = "Nivell d'Estrès Alt";
+                text.style.color = "#ffc107";
+
+                vGlu.innerText = "110 mg/dL";
+                vCort.innerText = "Elevat (22 ug/dL)";
+                vHidra.innerText = "Baixa";
+                vTemp.innerText = "36.7°C";
+            } 
+            else if (type === 'virus') {
+                circle.classList.add('status-danger');
+                icon.className = 'fas fa-virus';
+                text.innerText = "Risc d'Infecció";
+                text.style.color = "#dc3545";
+
+                vGlu.innerText = "105 mg/dL";
+                vCort.innerText = "Normal";
+                vHidra.innerText = "Òptima";
+                vTemp.innerText = "37.8°C (Pujant)";
+            }
+        }
+    </script>
+</body>
+</html>
