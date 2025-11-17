@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIDAM - Monitoratge de Salut Intel·ligent</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>PIDAM</h1>
+        <p>El futur de la medicina predictiva comença a la teva boca.</p>
+        <a href="#demo-section" class="btn">Veure Demo Interactiva</a>
+    </header>
+
+    <section id="com-funciona">
+        <h2 class="section-title">Com funciona?</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <i class="fas fa-tooth"></i>
+                <h3>1. Implants Intel·ligents</h3>
+                <p>Dos implants molars amb biosensors analitzen la saliva en temps real (glucosa, cortisol, pH).</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-wifi"></i>
+                <h3>2. Hub Palatí</h3>
+                <p>Una fina làmina al paladar processa les dades i les envia de forma segura i sense cables.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-brain"></i>
+                <h3>3. Anàlisi IA</h3>
+                <p>La nostra Intel·ligència Artificial detecta anomalies abans que apareguin els símptomes.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>4. Alerta Primerenca</h3>
+                <p>L'usuari i el metge reben avisos al mòbil o rellotge intel·ligent.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo-section">
+        <h2 class="section-title">Simulació de l'App PIDAM</h2>
+        <p style="margin-bottom: 30px;">Fes clic als botons de sota per simular diferents escenaris de salut en temps real.</p>
+        
+        <div class="app-simulator">
+            <div class="app-header">
+                PIDAM App <i class="fas fa-battery-full" style="float: right;"></i>
+            </div>
+            <div class="app-body">
+                <div id="status-circle" class="status-indicator status-ok">
+                    <i id="status-icon" class="fas fa-check"></i>
+                </div>
+                <h3 id="status-text" style="text-align: center; margin-bottom: 20px;">Tot Correcte</h3>
+                
+                <div class="metric">
+                    <span>Glucosa:</span>
+                    <span id="val-glucosa">95 mg/dL</span>
+                </div>
+                <div class="metric">
+                    <span>Cortisol:</span>
+                    <span id="val-cortisol">Normal</span>
+                </div>
+                <div class="metric">
+                    <span>Hidratació:</span>
+                    <span id="val-hidra">Òptima</span>
+                </div>
+                <div class="metric">
+                    <span>Temp:</span>
+                    <span id="val-temp">36.5°C</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-controls">
+            <button class="demo-btn" onclick="setScenario('ok')">Estat Normal</button>
+            <button class="demo-btn" onclick="setScenario('stress')">Simular Estrès</button>
+            <button class="demo-btn" onclick="setScenario('virus')">Simular Infecció</button>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Per què PIDAM?</h2>
+        <div class="steps-grid">
+            <div class="step-card" style="text-align: left;">
+                <h3><i class="fas fa-user-shield"></i> Seguretat per a Gent Gran</h3>
+                <p>Monitoratge passiu. No cal recordar posar-se aparells ni carregar bateries cada dia.</p>
+            </div>
+            <div class="step-card" style="text-align: left;">
+                <h3><i class="fas fa-chart-line"></i> Medicina Predictiva</h3>
+                <p>No esperis a estar malalt. PIDAM t'avisa dies abans que la malaltia es manifesti.</p>
+            </div>
+            <div class="step-card" style="text-align: left;">
+                <h3><i class="fas fa-user-md"></i> Connexió Mèdica</h3>
+                <p>El teu metge pot accedir a un historial complet de les teves biomètriques.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>PIDAM © 2025</h3>
+        <p>Transformant l'odontologia en la primera línia de defensa mèdica.</p>
+        <p><small>Contacte: info@pidam-demo.com</small></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

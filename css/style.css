@@ -1,0 +1,188 @@
+:root {
+    --primary: #0056b3; /* Blau mèdic */
+    --accent: #00d4ff;  /* Blau tecnològic */
+    --light: #f4f7f6;
+    --dark: #333;
+    --text: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* HEADER / HERO SECTION */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.btn {
+    background: white;
+    color: var(--primary);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* SECCIONS GENERALS */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+/* COM FUNCIONA (GRID) */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.step-card {
+    background: var(--light);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.step-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* DEMO INTERACTIVA */
+#demo-section {
+    background-color: #f0f2f5;
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+}
+
+.app-simulator {
+    background: white;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 30px;
+    border: 8px solid #333;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.app-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.status-indicator {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    transition: 0.5s;
+}
+
+.status-ok { background-color: #28a745; box-shadow: 0 0 20px #28a74580; }
+.status-warning { background-color: #ffc107; box-shadow: 0 0 20px #ffc10780; }
+.status-danger { background-color: #dc3545; box-shadow: 0 0 20px #dc354580; }
+
+.metric {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.demo-controls {
+    margin-top: 30px;
+}
+
+.demo-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: var(--dark);
+    color: white;
+}
+
+/* FOOTER */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 50px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.5rem; }
+    .steps-grid { grid-template-columns: 1fr; }
+}
